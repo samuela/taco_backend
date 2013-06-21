@@ -58,5 +58,14 @@ module TacoBackend
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.middleware.use Helios::Application do
+      service :data, model: 'path/to/DataModel.xcdatamodel'
+      #service :push_notification, apn_certificate: 'path/to/apple_push_notification.pem', apn_environment: 'development'
+      #service :in_app_purchase
+      #service :passbook
+    end
+    
+    
   end
 end
