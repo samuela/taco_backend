@@ -60,7 +60,7 @@ module TacoBackend
     config.assets.version = '1.0'
     
     config.middleware.use Helios::Application do
-      service :data, model: 'path/to/DataModel.xcdatamodel'
+      service :data, model: '../taco/Taco/Taco/Core Data/Taco.xcdatamodeld'
       #service :push_notification, apn_certificate: 'path/to/apple_push_notification.pem', apn_environment: 'development'
       #service :in_app_purchase
       #service :passbook
