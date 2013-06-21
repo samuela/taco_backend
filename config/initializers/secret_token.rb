@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-TacoBackend::Application.config.secret_token = 'd244843564936712a0e40bb8a5ce27a4e37676a0d421e81a89bffcc6032fb49431a0a1b6a5a3a13c37bf1dca946a75c1bf1fc84cc997f8896ae20c2b1b1af18f'
+TacoBackend::Application.config.secret_token = '85e34f430c5dcff2722f8ac999e7f96f37aca2fe98d6116d0db82fb89fd5f829759cad962ef7aeb2eb741aee9bb51273eeab91887e01866520862189d5427505'
