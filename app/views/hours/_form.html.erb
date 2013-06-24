@@ -1,0 +1,25 @@
+<%= form_for(@hour) do |f| %>
+  <% if @hour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hour.errors.count, "error") %> prohibited this hour from being saved:</h2>
+
+      <ul>
+      <% @hour.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :open %><br />
+    <%= f.text_field :open %>
+  </div>
+  <div class="field">
+    <%= f.label :closed %><br />
+    <%= f.text_field :closed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

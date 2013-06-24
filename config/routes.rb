@@ -1,4 +1,7 @@
 TacoBackend::Application.routes.draw do
+  resources :hours
+
+
   resources :addresses
 
 

@@ -3,4 +3,5 @@ class Venue < ActiveRecord::Base
   belongs_to :category
   has_many :addresses
   has_one :review
+  has_one :hour
 end
