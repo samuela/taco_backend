@@ -18,7 +18,7 @@ class AddressesControllerTest < ActionController::TestCase
 
   test "should create address" do
     assert_difference('Address.count') do
-      post :create, address: { neighborhood: @address.neighborhood }
+      post :create, address: { city: @address.city, crossstreet: @address.crossstreet, latitude: @address.latitude, longitude: @address.longitude, neighborhood: @address.neighborhood, street: @address.street, zipcode: @address.zipcode }
     end
 
     assert_redirected_to address_path(assigns(:address))
@@ -35,7 +35,7 @@ class AddressesControllerTest < ActionController::TestCase
   end
 
   test "should update address" do
-    put :update, id: @address, address: { neighborhood: @address.neighborhood }
+    put :update, id: @address, address: { city: @address.city, crossstreet: @address.crossstreet, latitude: @address.latitude, longitude: @address.longitude, neighborhood: @address.neighborhood, street: @address.street, zipcode: @address.zipcode }
     assert_redirected_to address_path(assigns(:address))
   end
 

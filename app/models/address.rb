@@ -1,4 +1,5 @@
 class Address < ActiveRecord::Base
-  attr_accessible :neighborhood
-  belongs_to :venue
+  attr_accessible :city, :crossstreet, :latitude, :longitude, :neighborhood, :street, :zipcode
+  has_one :venues
+  
 end

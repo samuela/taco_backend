@@ -2,7 +2,13 @@
 
 <table>
   <tr>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>City</th>
+    <th>Zipcode</th>
     <th>Neighborhood</th>
+    <th>Street</th>
+    <th>Crossstreet</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +16,13 @@
 
 <% @addresses.each do |address| %>
   <tr>
+    <td><%= address.latitude %></td>
+    <td><%= address.longitude %></td>
+    <td><%= address.city %></td>
+    <td><%= address.zipcode %></td>
     <td><%= address.neighborhood %></td>
+    <td><%= address.street %></td>
+    <td><%= address.crossstreet %></td>
     <td><%= link_to 'Show', address %></td>
     <td><%= link_to 'Edit', edit_address_path(address) %></td>
     <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
