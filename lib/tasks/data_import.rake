@@ -19,7 +19,7 @@ require 'active_support/all'
 # timeless -- (Only in New York)
 # More Events
 #--------------------------------
-  task :import_from_scoop do
+task :import_from_scoop => :environment do
   #JSON Rquest
   #Category.create :feedURL => "currentURLfeed", :nytID => "currentNYTwordID"
   result = JSON.parse open('http://scoopapp.nytimes.com/iphone/scoop/category/newcategorylist.json').read
@@ -98,7 +98,7 @@ require 'active_support/all'
     currentURLfeed = x[1]
     currentNYTwordID = defaultKeys[defaultKeyCounter]
     defaultKeyCounter += 1
-
+    Category.create :feedURL => currentURLfeed, :nytID => currentNYTwordID
     jsonDataFromURLFeed =JSON.parse open(x[1]).read #x[1] contains all URLfeeds
     allItems = jsonDataFromURLFeed.fetch("list").fetch("items") #fetching all the items in the list
     
@@ -120,8 +120,7 @@ require 'active_support/all'
       #category.nytID = currentNYTwordID
       #category.save
 
-      Category.create :feedURL => currentURLfeed, :nytID => currentNYTwordID
-      #Venue.create :latitude => currentLatitude, :longitude => currentLongitude, :nytID => currentNYTnumberID
+      Venue.create :latitude => currentLatitude, :longitude => currentLongitude, :nytID => currentNYTnumberID
       
     end
     /parse.each do |x| #Going through every ID in the item
