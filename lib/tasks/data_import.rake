@@ -98,7 +98,7 @@ task :import_from_scoop => :environment do
     currentURLfeed = x[1]
     currentNYTwordID = defaultKeys[defaultKeyCounter]
     defaultKeyCounter += 1
-    Category.create :feedURL => currentURLfeed, :nytID => currentNYTwordID
+    category = Category.create :feedURL => currentURLfeed, :nytID => currentNYTwordID
     jsonDataFromURLFeed =JSON.parse open(x[1]).read #x[1] contains all URLfeeds
     allItems = jsonDataFromURLFeed.fetch("list").fetch("items") #fetching all the items in the list
     
@@ -120,18 +120,14 @@ task :import_from_scoop => :environment do
       #category.nytID = currentNYTwordID
       #category.save
 
-      Venue.create :latitude => currentLatitude, :longitude => currentLongitude, :nytID => currentNYTnumberID
+      venue = Venue.create :latitude => currentLatitude,
+                   :longitude => currentLongitude,
+                   :nytID => currentNYTnumberID
+      
+      venue.category =  category
+      venue.save
+
       
     end
-    /parse.each do |x| #Going through every ID in the item
-      id = x.fetch('id')
-      # puts id
-      counter += 1
-
-      #Insert ID into Venue!
-      #Venue.create(id)
-    end/
-    #Finished With URLFeed
-    
   end
 end
