@@ -1,19 +1,4 @@
 TacoBackend::Application.routes.draw do
-  resources :hours
-
-
-  resources :addresses
-
-
-  resources :reviews
-
-
-  resources :venues
-
-
-  resources :categories
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
