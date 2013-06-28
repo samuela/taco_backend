@@ -5,6 +5,7 @@ require 'open-uri'
 require 'pp'
 require 'active_support/all'
 
+
 #Category Unique ID's (in order):
 #--------------------------
 # Get data for these for now
@@ -18,9 +19,9 @@ require 'active_support/all'
 # timeless -- (Only in New York)
 # More Events
 #--------------------------------
-
-task :import_from_scoop do
+  task :import_from_scoop do
   #JSON Rquest
+  #Category.create :feedURL => "currentURLfeed", :nytID => "currentNYTwordID"
   result = JSON.parse open('http://scoopapp.nytimes.com/iphone/scoop/category/newcategorylist.json').read
 
   #Constants
@@ -39,16 +40,16 @@ task :import_from_scoop do
   #the feedURL, categoryName and
   #categoryTitle
   result['categories'].each { |i|
-    puts i 
+    # puts i 
     hash = Hash.new()
     hash = {"#{i['uniqueID']}" => [counter,"#{i['feedURL']}", "#{i['categoryName']}", "#{i['categoryTitle']}" ]}
-  	
-    puts "#{i['uniqueID']}"
 
-  	arrayOfHashes.push(hash)
-  	arrayOfUniqueIDs[counter] = "#{i['uniqueID']}"
-  	arrayOfFeeds[counter] = "#{i['feedURL']}"
-  	counter+=1
+    #puts "#{i['uniqueID']}"
+
+    arrayOfHashes.push(hash)
+    arrayOfUniqueIDs[counter] = "#{i['uniqueID']}"
+    arrayOfFeeds[counter] = "#{i['feedURL']}"
+    counter+=1
   }
 
   #Debugging purposes, printing out our hashList
@@ -67,7 +68,7 @@ task :import_from_scoop do
   arrayOfHashes.each do  |x| 
     array = Array.new()
     #can get the word unique id by just accessing arrayOfUniqIDs[j]
-    array.push(x[arrayOfUniqueIDs[j]][0]) # Number ID
+    array.push(x[arrayOfUniqueIDs[j]][0]) # static number ID that I created..necessary?
     array.push(x[arrayOfUniqueIDs[j]][1]) # FeedURL
     array.push(x[arrayOfUniqueIDs[j]][3]) # CategoryTitle
     arrayInfo.push(array)
@@ -81,22 +82,57 @@ task :import_from_scoop do
   #and searches for every id with in the giant items array
 
   #TODO: Inject each id generated into our database 
-  j = 0
-  counter = 0
+  
+  #Some Variables
+  
+  defaultKeyCounter = 0
+  debugCounter = 0
+  currentURLfeed = ""
+  currentNYTnumberID = ""
+  currentNYTwordID = ""
+  currentLatitude = ""
+  currentLongitude = ""
+
   arrayInfo.each do |x|
+
+    currentURLfeed = x[1]
+    currentNYTwordID = defaultKeys[defaultKeyCounter]
+    defaultKeyCounter += 1
+
     jsonDataFromURLFeed =JSON.parse open(x[1]).read #x[1] contains all URLfeeds
-    parse = jsonDataFromURLFeed.fetch("list").fetch("items") #fetching all the items in the list
-    parse.each do |x| #Going through every ID in the item
+    allItems = jsonDataFromURLFeed.fetch("list").fetch("items") #fetching all the items in the list
+    
+    allItems.each do |x| #Going through each item..      
+      currentNYTnumberID = x.fetch('id')
+      address = x.fetch('addresses')
+
+      address.each do |y|
+        currentLatitude = y.fetch('latitude')
+        currentLongitude= y.fetch('longitude')
+        debugCounter+=1
+        break
+      end
+
+      # #inject into database here 
+      # category = Category.new
+      #category = Category.new
+      #category.feedURL = currentURLfeed
+      #category.nytID = currentNYTwordID
+      #category.save
+
+      Category.create :feedURL => currentURLfeed, :nytID => currentNYTwordID
+      #Venue.create :latitude => currentLatitude, :longitude => currentLongitude, :nytID => currentNYTnumberID
+      
+    end
+    /parse.each do |x| #Going through every ID in the item
       id = x.fetch('id')
       # puts id
       counter += 1
 
       #Insert ID into Venue!
       #Venue.create(id)
-    end
+    end/
     #Finished With URLFeed
     
   end
-
-  # puts counter
 end
