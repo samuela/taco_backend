@@ -120,9 +120,12 @@ task :import_from_scoop => :environment do
       #category.nytID = currentNYTwordID
       #category.save
 
-      venue = Venue.new :latitude => currentLatitude,
+      venue = Venue.new :venue_name => "test",
+                   :time_of_day => "test-insert here-",
+                   :latitude => currentLatitude,
                    :longitude => currentLongitude,
                    :nytID => currentNYTnumberID
+                   
       
       venue.category = category
       venue.save
