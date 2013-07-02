@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql #sqlite3
-  host: immense-reef-5282.herokuapp.com/
+  host: localhost
   username: user
   #database: db/test.sqlite3
   #username: user
