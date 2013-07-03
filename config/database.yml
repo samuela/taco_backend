@@ -7,7 +7,7 @@ development:
   adapter: sqlite3 #postgresql 
   host: localhost
   #username: user
-  database: db/test.sqlite3
+  database: db/development.sqlite3
   #username: user
   #database: app-dev
   pool: 5

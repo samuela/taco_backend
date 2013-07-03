@@ -18,7 +18,7 @@
 <% @venues.each do |venue| %>
   <tr>
     <td><%= venue.venue_name %></td>
-    <td><%= venue.website %></td>
+    <td><a href="<%= venue.website %>"><%= venue.website %></a></td>
     <td><%= venue.time_of_day %></td>
     <td><%= venue.latitude %></td>
     <td><%= venue.longitude %></td>
@@ -26,7 +26,7 @@
 
     <td><%= link_to 'Show', venue %></td>
     <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
-    <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!-- <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
   </tr>
 <% end %>
 </table>

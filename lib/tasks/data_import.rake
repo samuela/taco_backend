@@ -87,31 +87,39 @@ task :import_from_scoop => :environment do
   
   defaultKeyCounter = 0
   debugCounter = 0
+  venueName = ""
+  website = ""
   currentURLfeed = ""
   currentNYTnumberID = ""
   currentNYTwordID = ""
   currentLatitude = ""
   currentLongitude = ""
+  check = true
 
   arrayInfo.each do |x|
 
     currentURLfeed = x[1]
     currentNYTwordID = defaultKeys[defaultKeyCounter]
-    defaultKeyCounter += 1
+
     category = Category.create :feedURL => currentURLfeed, :nytID => currentNYTwordID
     jsonDataFromURLFeed =JSON.parse open(x[1]).read #x[1] contains all URLfeeds
     allItems = jsonDataFromURLFeed.fetch("list").fetch("items") #fetching all the items in the list
     
-    allItems.each do |x| #Going through each item..      
+    allItems.each do |x| #Going through each item.. 
+      
+      venueName = x.fetch('title')   
       currentNYTnumberID = x.fetch('id')
       address = x.fetch('addresses')
 
       address.each do |y|
         currentLatitude = y.fetch('latitude')
         currentLongitude= y.fetch('longitude')
+        website = y.fetch('website')
         debugCounter+=1
         break
       end
+
+      defaultKeyCounter += 1
 
       # #inject into database here 
       # category = Category.new
@@ -119,12 +127,14 @@ task :import_from_scoop => :environment do
       #category.feedURL = currentURLfeed
       #category.nytID = currentNYTwordID
       #category.save
-
-      venue = Venue.new :venue_name => "test",
-                   :time_of_day => "test-insert here-",
+      
+      venue = Venue.new :venue_name => venueName,
+                   :website => website,
+                   :time_of_day => "insert",
                    :latitude => currentLatitude,
                    :longitude => currentLongitude,
                    :nytID => currentNYTnumberID
+                   
                    
       
       venue.category = category

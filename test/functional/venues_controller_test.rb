@@ -18,7 +18,7 @@ class VenuesControllerTest < ActionController::TestCase
 
   test "should create venue" do
     assert_difference('Venue.count') do
-      post :create, venue: { latitude: @venue.latitude, longitude: @venue.longitude, nytID: @venue.nytID }
+      post :create, venue: { latitude: @venue.latitude, longitude: @venue.longitude, nytID: @venue.nytID, time_of_day: @venue.time_of_day, venue_name: @venue.venue_name, website: @venue.website }
     end
 
     assert_redirected_to venue_path(assigns(:venue))
@@ -35,7 +35,7 @@ class VenuesControllerTest < ActionController::TestCase
   end
 
   test "should update venue" do
-    put :update, id: @venue, venue: { latitude: @venue.latitude, longitude: @venue.longitude, nytID: @venue.nytID }
+    put :update, id: @venue, venue: { latitude: @venue.latitude, longitude: @venue.longitude, nytID: @venue.nytID, time_of_day: @venue.time_of_day, venue_name: @venue.venue_name, website: @venue.website }
     assert_redirected_to venue_path(assigns(:venue))
   end
 
