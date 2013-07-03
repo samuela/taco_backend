@@ -1,0 +1,182 @@
+
+ ------------------------------------------------
+  categoryTitle 	     => Restaurants
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => restaurants
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/thesiftyfifty
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-restaurants2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-restaurants.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/category/cat-sifty.png
+	 rank                => 10
+	 slot                => 
+	 categoryDisplayName => Restaurants
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/category/restaurants.png
+
+ ------------------------------------------------
+  categoryTitle 	     => The Top Shelf
+ ------------------------------------------------
+
+	 categoryName        => Bars
+	 uniqueID            => bars
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/thetopshelf
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-bars@2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-bars.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/cat-bars.png
+	 rank                => 20
+	 slot                => 
+	 categoryDisplayName => Bars
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/bars.png
+
+ ------------------------------------------------
+  categoryTitle 	     => The Filter
+ ------------------------------------------------
+
+	 categoryName        => Coffee
+	 uniqueID            => coffeeshops
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/coffeeshops
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-coffee@2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-coffee.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/cat-coffee.png
+	 rank                => 30
+	 slot                => 
+	 categoryDisplayName => Coffee
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/coffeeshops.png
+
+ ------------------------------------------------
+  categoryTitle 	     => Art
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => art
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/art
+	 largeImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/launchpad-art@2x.png
+	 smallImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/cat-header-art@2x.png
+	 facebookImageURL    => https://s3.amazonaws.com/nytimes.conmio/scoop/cat-art.png
+	 rank                => 40
+	 slot                => 
+	 categoryDisplayName => Art
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/thisweek.png
+
+ ------------------------------------------------
+  categoryTitle 	     => Theater
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => theater
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/theater
+	 largeImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/launchpad-theater@2x.png
+	 smallImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/cat-header-theater@2x.png
+	 facebookImageURL    => https://s3.amazonaws.com/nytimes.conmio/scoop/cat-theater.png
+	 rank                => 50
+	 slot                => 
+	 categoryDisplayName => Theater
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/thisweek.png
+
+ ------------------------------------------------
+  categoryTitle 	     => Music & Dance
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => musicdance
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/musicdance
+	 largeImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/launchpad-musicdance@2x.png
+	 smallImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/cat-header-musicdance@2x.png
+	 facebookImageURL    => https://s3.amazonaws.com/nytimes.conmio/scoop/cat-musicdance.png
+	 rank                => 60
+	 slot                => 
+	 categoryDisplayName => Music & Dance
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/thisweek.png
+
+ ------------------------------------------------
+  categoryTitle 	     => Summer 2013
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => summer
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/bigcityholidays
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-summer2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-summer-2x.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/category/cat-summer.png
+	 rank                => 70
+	 slot                => 
+	 categoryDisplayName => Summer 2013
+	 webImageURL         => 
+
+ ------------------------------------------------
+  categoryTitle 	     => Only in New York
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => timeless
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/timeless
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-onlyinny@2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-onlyinny.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/cat-only-in-ny.png
+	 rank                => 80
+	 slot                => 
+	 categoryDisplayName => Only in N.Y.
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/timeless.png
+
+ ------------------------------------------------
+  categoryTitle 	     => Kids
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => kids
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/kids
+	 largeImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/launchpad-kids@2x.png
+	 smallImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/cat-header-kids@2x.png
+	 facebookImageURL    => https://s3.amazonaws.com/nytimes.conmio/scoop/cat-kids.png
+	 rank                => 100
+	 slot                => 
+	 categoryDisplayName => Kids
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/thisweek.png
+
+ ------------------------------------------------
+  categoryTitle 	     => Home Furnishings
+ ------------------------------------------------
+
+	 categoryName        => Shopping
+	 uniqueID            => househome
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/househome
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-houseandhome@2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-houseandhome.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/cat-houseandhome.png
+	 rank                => 110
+	 slot                => 
+	 categoryDisplayName => Home Furnishings
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/househome.png
+
+ ------------------------------------------------
+  categoryTitle 	     => 
+ ------------------------------------------------
+
+	 categoryName        => Day Trips
+	 uniqueID            => daytrips
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/daytrips
+	 largeImageURL       => http://scoopapp.nytimes.com/i/scoop/category/launchpad-daytrips@2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-daytrips.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/cat-daytrips.png
+	 rank                => 120
+	 slot                => 
+	 categoryDisplayName => Day Trips
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/daytrips.png
+
+ ------------------------------------------------
+  categoryTitle 	     => More Events
+ ------------------------------------------------
+
+	 categoryName        => 
+	 uniqueID            => moreevents
+	 feedURL             => http://scoopapp.nytimes.com/iphone/scoop/list/moreevents
+	 largeImageURL       => https://s3.amazonaws.com/nytimes.conmio/scoop/category/launchpad-events@2x.png
+	 smallImageURL       => http://scoopapp.nytimes.com/i/scoop/category/cat-header-events.png
+	 facebookImageURL    => http://scoopapp.nytimes.com/i/scoop/cat-events.png
+	 rank                => 130
+	 slot                => 
+	 categoryDisplayName => More Events
+	 webImageURL         => http://scoopapp.nytimes.com/i/scoop/webimages/thisweek.png
+
+
