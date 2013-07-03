@@ -2,9 +2,14 @@
 
 <table>
   <tr>
-    <th>Nytid</th>
-    <th>Longitude</th>
+    <th>Venue name</th>
+    <th>Website</th>
+    <th>Time of day</th>
     <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Nytid</th>
+    
+    
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +17,13 @@
 
 <% @venues.each do |venue| %>
   <tr>
-    <td><%= venue.nytID %></td>
-    <td><%= venue.longitude %></td>
+    <td><%= venue.venue_name %></td>
+    <td><%= venue.website %></td>
+    <td><%= venue.time_of_day %></td>
     <td><%= venue.latitude %></td>
+    <td><%= venue.longitude %></td>
+    <td><%= venue.nytID %></td>
+
     <td><%= link_to 'Show', venue %></td>
     <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
     <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>

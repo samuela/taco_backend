@@ -1,8 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Nytid:</b>
-  <%= @venue.nytID %>
+  <b>Venue name:</b>
+  <%= @venue.venue_name %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @venue.website %>
+</p>
+
+<p>
+  <b>Time of day:</b>
+  <%= @venue.time_of_day %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @venue.latitude %>
 </p>
 
 <p>
@@ -11,9 +26,10 @@
 </p>
 
 <p>
-  <b>Latitude:</b>
-  <%= @venue.latitude %>
+  <b>Nytid:</b>
+  <%= @venue.nytID %>
 </p>
+
 
 
 <%= link_to 'Edit', edit_venue_path(@venue) %> |

@@ -1,4 +1,4 @@
 class Venue < ActiveRecord::Base
-  attr_accessible :venue_name, :time_of_day, :latitude, :longitude, :nytID
+  attr_accessible :latitude, :longitude, :nytID, :time_of_day, :venue_name, :website
   belongs_to :category
 end

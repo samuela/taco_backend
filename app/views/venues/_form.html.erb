@@ -11,18 +11,33 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :nytID %><br />
-    <%= f.text_field :nytID %>
+    <%= f.label :venue_name %><br />
+    <%= f.text_field :venue_name %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+   <div class="field">
+    <%= f.label :time_of_day %><br />
+    <%= f.text_field :time_of_day %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
   </div>
   <div class="field">
     <%= f.label :longitude %><br />
     <%= f.text_field :longitude %>
   </div>
   <div class="field">
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
+    <%= f.label :nytID %><br />
+    <%= f.text_field :nytID %>
   </div>
+ 
+
   <div class="actions">
     <%= f.submit %>
   </div>
