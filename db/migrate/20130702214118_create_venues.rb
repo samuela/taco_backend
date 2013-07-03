@@ -7,7 +7,6 @@ class CreateVenues < ActiveRecord::Migration
       t.string :latitude
       t.string :longitude
       t.string :nytID
-      t.string :website
 
       t.timestamps
     end
