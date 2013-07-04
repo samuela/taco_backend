@@ -6,11 +6,16 @@
 <p align="center">Some examples might be something like: ... </p>
 
 <style type="text/css">
+
 .meat
 {
     background-color: #E5E4E2;
     border-collapse: collapse;
-    
+}
+
+td {
+   padding: 5px;
+
 }
 </style>
 
@@ -39,7 +44,7 @@
     <td><%= venue.nytID %></td>
 
     <td><%= link_to 'Show', venue %></td>
-    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+    <td style="color: #FF00FF"><%= link_to 'Edit', edit_venue_path(venue) %></td>
     <!-- <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
   </tr>
 <% end %>
