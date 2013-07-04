@@ -130,7 +130,7 @@ task :import_from_scoop => :environment do
       
       venue = Venue.new :venue_name => venueName,
                    :website => website,
-                   :time_of_day => "insert",
+                   :tags => "insert",
                    :latitude => currentLatitude,
                    :longitude => currentLongitude,
                    :nytID => currentNYTnumberID

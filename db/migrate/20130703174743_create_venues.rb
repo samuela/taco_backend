@@ -8,7 +8,6 @@ class CreateVenues < ActiveRecord::Migration
       t.string :time_of_day
       t.string :venue_name
       t.string :website
-
       t.timestamps
     end
   end
