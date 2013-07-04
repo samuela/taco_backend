@@ -17,6 +17,11 @@ td {
    padding: 5px;
 
 }
+
+a 
+{ 
+    color:#E33192; 
+}
 </style>
 
 <table border = "1" class = "meat" >
@@ -43,7 +48,7 @@ td {
     <td><%= venue.longitude %></td>
     <td><%= venue.nytID %></td>
 
-    <td><%= link_to 'Show', venue %></td>
+   <!-- <td><%= link_to 'Show', venue %></td> -->
     <td style="color: #FF00FF"><%= link_to 'Edit', edit_venue_path(venue) %></td>
     <!-- <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
   </tr>
