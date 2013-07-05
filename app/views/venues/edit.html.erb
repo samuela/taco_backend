@@ -4,6 +4,9 @@
 
 <p>Tags used so far: <%
   
+  require 'json'
+  require 'open-uri'
+  
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
   tagsArrayList = Array.new()
  
@@ -25,7 +28,7 @@
   tagsArrayList.each do |x|
     puts "#{x}"
   end
-  
+
   %> </p>
 
 <%= link_to 'Show', @venue %> |
