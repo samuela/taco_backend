@@ -50,7 +50,7 @@
 
    Tags used so far: 
 
-  <%=
+  <%
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
   tagsArrayList = Array.new()
  
@@ -67,6 +67,14 @@
     end
   }
   %>
+
+  <%
+  tagsArrayList.each do |x|
+    %> 
+    <!-- <select><option value= <%= x %>> <%= x %> </option></select> !-->
+
+    <% puts "#{x}" 
+     end  %> 
 
   <div class="field">
     <%= f.label :latitude %><br />
