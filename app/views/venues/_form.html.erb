@@ -80,6 +80,11 @@
       "Scala",
       "Scheme"
     ];
+
+     $( "#tags" ).autocomplete({
+      source: array
+    });
+     
     });
 
  </script>
@@ -95,9 +100,7 @@
  <% end  %> 
 
   <script type="text/javascript">
-       $( "#tags" ).autocomplete({
-      source: array
-    });
+      
   </script>
     
 
