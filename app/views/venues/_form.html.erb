@@ -71,7 +71,7 @@
     <%
       tagsArrayList.each do |x|
     %> 
-        <option value= <%= "#{x}" %>> <%= "#{x}" %> </option>
+        <option draggable="true" ondragstart="drag(event)" value= <%= "#{x}" %>> <%= "#{x}" %> </option>
     <% end  %> 
  </select> 
 
