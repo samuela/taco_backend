@@ -59,34 +59,7 @@
 
  <script type="text/javascript">
       $(function() {
-      var array = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-
-     $( "#tags" ).autocomplete({
-      source: array
-    });
+      var array = Array.new()
 
     });
 
@@ -104,6 +77,9 @@
 
   <script type="text/javascript">
       
+     $( "#tags" ).autocomplete({
+      source: array
+    });
   </script>
     
 
