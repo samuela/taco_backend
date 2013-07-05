@@ -30,8 +30,8 @@
     <input type="text" name="TAGS">
   </div>
 
-<script src="jquery.js"></script>
-<script src="autocomplete.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
   Tags used so far: 
  
@@ -56,6 +56,7 @@
 
  <script type="text/javascript">
       var array = new Array();
+
  </script>
  
   <%
@@ -69,8 +70,9 @@
  <% end  %> 
 
   <script type="text/javascript">
-      alert ("calling autocomplete");
-      var widget = new AutoComplete('tags', array);
+       $( "#tags" ).autocomplete({
+      source: array
+    });
   </script>
     
 
