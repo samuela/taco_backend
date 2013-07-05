@@ -180,25 +180,16 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        
-       data.addColumn('string', 'Task');
-       data.addColumn('number', 'Hours per Day');
-       data.addRows([
-  ['Work', 11],
-  ['Eat', 2],
-  ['Commute', 2],
-  ['Watch TV', 2],
-  ['Sleep', {v:7, f:'7.000'}]
-]);
-        /*var data = google.visualization.arrayToDataTable([
+      google.setOnLoadCallback(function(){drawChart(1)});
+      function drawChart(v1) {
+        alert (v1);
+        var data = google.visualization.arrayToDataTable([
           ['Year', 'Sales', 'Expenses'],
           ['2004',  1000,      400],
           ['2005',  1170,      460],
           ['2006',  660,       1120],
           ['2007',  1030,      540]
-        ]);*/
+        ]);
 
         var options = {
           title: 'Company Performance',
