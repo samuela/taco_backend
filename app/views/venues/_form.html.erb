@@ -26,7 +26,7 @@
     <%= f.text_field :tags %>
   </div>
 
-  <div class="ui-widget">
+<div class="ui-widget">
   <label for="tags">Tags: </label>
   <input id="tags" />
 </div>
@@ -59,23 +59,47 @@
 
  <script type="text/javascript">
       $(function() {
-      var array = Array.new()
-      '  <%
-      tagsArrayList.each do |x|
-      %> '
-  
-            array.push("hi");
-            array.push("hello");
-            array.push("howdy");
-    
- '<% end  %>'
+      var array = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
 
-    });
-       $( "#tags" ).autocomplete({
+     $( "#tags" ).autocomplete({
       source: array
     });
 
+    });
+
  </script>
+ 
+  <%
+      tagsArrayList.each do |x|
+        puts "#{x}"
+  %> 
+       
+    
+ <% end  %> 
+
 
   <div class="field">
     <%= f.label :latitude %><br />
