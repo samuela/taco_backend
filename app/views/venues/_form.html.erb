@@ -12,21 +12,45 @@
   <% end %>
 
 
+<script>
+  function allowDrop(ev)
+  {
+    ev.preventDefault();
+  }
+
+  function drag(ev)
+  {
+    ev.dataTransfer.setData("Text",ev.target.id);
+  } 
+
+  function drop(ev)
+  {
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+</script>
+
+
   <div class="field">
     <%= f.label :venue_name %><br />
     <%= f.text_field :venue_name %>
   </div>
+  
   <div class="field">
     <%= f.label :website %><br />
     <%= f.text_field :website %>
   </div>
-   <div class="field">
+  
+   <div class="field" ondrop="drop(event)" ondragover="allowDrop(event)">
     <%= f.label :tags %><br />
     <%= f.text_field :tags %>
-    Testing ......... 
-   <p>Tags used so far: <%=
-  
-  
+
+  </div>
+
+   Tags used so far: 
+
+  <%=
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
   tagsArrayList = Array.new()
  
@@ -37,21 +61,22 @@
     if (tags != "insert")
         words = tags.split(',')     
         words.each do |word|
-
             if (!tagsArrayList.include?(word))
               tagsArrayList.push(word)
             end
         end
     end
   }
-  
+  %>
+
+  <%=
   tagsArrayList.each do |x|
-    puts "#{x}"
-  end
+    %> 
+    <select><option value= <%= x %>> <%= x %> </option></select>
 
-  %> </p>
-
-  </div>
+    <!--puts "#{x}" !-->
+    <%= end  %> 
+    
   <div class="field">
     <%= f.label :latitude %><br />
     <%= f.text_field :latitude %>
