@@ -21,7 +21,7 @@
     <%= f.text_field :website %>
   </div>
   
-   <div class="field" id="tags" ondrop="drop(event)" ondragover="allowDrop(event)">
+   <div class="field" id="tags">
     <%= f.label :tags %><br />
     <%= f.text_field :tags %>
   </div>
@@ -58,13 +58,14 @@
       tagsArrayList.each do |x|
   %> 
        <script type="text/javascript">
-            alert ("ok, pushing in arraylist");
+            //alert ("ok, pushing in arraylist");
             array.push("#{x}");
        </script>
     
  <% end  %> 
 
   <script type="text/javascript">
+      alert ("calling autocomplete");
       var widget = new AutoComplete('tags', array);
   </script>
     
