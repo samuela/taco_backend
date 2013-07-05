@@ -33,7 +33,7 @@
 </div>
 
 <body>
-  <div id="chart_div" style="width: 500px; height: 200px; position: relative; left: 15%; "></div>
+  <div id="chart_div" style="width: 600px; height: 200px; position: relative; left: 15%; "></div>
 </body>
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -44,9 +44,10 @@
   Tags used so far: 
  
   <%
+  occurences =0 
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
-  tagsArrayList = Array.new()
- 
+  tagsArrayList = Array.new
+  hashList = Array.new
   result.each { |i| 
     tags = i.fetch('tags')
     
@@ -55,12 +56,52 @@
         words.each do |word|
    
           if (!tagsArrayList.include?(word))
+              hash = Hash.new
+              hash[word] = tagsArrayList.count(word)
               tagsArrayList.push(word)
-            end
+              hashList.push(hash)
+          else
+            hash = Hash.new
+            hash[word] = tagsArrayList.count(word)
+            hashList.push(hash)
+          end
         end
     end
+
+
+    # Massive and unneccessary, but gets the job done!
+
+    v1=hash["organic"]
+    v2=hash["lunch"]
+    v3=hash["brunch"]
+    v4=hash["cocktail"]
+    v5=hash["dessert"]
+    v6=hash["bar"]
+    v7=hash["dinner"]
+    v8=hash["wine"]
+    v9=hash["local"]
+    v10=hash["american"]
+    v11=hash["nordic"]
+    v12=hash["happy-hour"]
+    v13=hash["cocktails"]
+    v14=hash["beer"]
+    v15=hash["indian"]
+    v16=hash["indoor"]
+    v17=hash["lounge"]
+    v18=hash["cheese"]
+    v19=hash["private"]
+    v20=hash["tasting"]
+    v21=hash["italian"]
+    v22=hash["french"]
+    v23=hash["breakfast"]
+    v24=hash["desserts"]
+    v25=hash["steakhouse"]
+    v26=hash["sushi"]
+    v27=hash["drinks"]
+
   }
   %>
+
 
  <script type="text/javascript">
       $(function() {
@@ -102,6 +143,13 @@
     });
 
  </script>
+
+ 
+  <script type="text/javascript">
+    drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27);
+
+
+   </script>
  
   <select>
     <%
@@ -136,13 +184,39 @@
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
+     
+
+      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27)
+      {
+         var data = google.visualization.arrayToDataTable([
           ['Name', 'Occurences'],
-          ['2004',  1000],
-          ['2005',  1170],
-          ['2006',  660],
-          ['2007',  1030]
+          ['organic',  v1],
+          ['lunch',  v2],
+          ['brunch',  v3],
+          ['cocktail',  v4]
+          ['dessert', v5],
+          ['bar',  v6],
+          ['dinner',  v7],
+          ['wine', v8],
+          ['local', v9],
+          ['american',  v10],
+          ['nordic',  v11],
+          ['happy-hour',  v12],
+          ['cocktails', v13],
+          ['beer',  v14],
+          ['indian',  v15],
+          ['indoor',  v16],
+          ['lounge', v17],
+          ['cheese',  v18],
+          ['private',  v19],
+          ['tasting',  v20],
+          ['italian', v21],
+          ['french',  v22],
+          ['breakfast',  v23],
+          ['desserts',  v24],
+          ['steakhouse', v25],
+          ['sushi',  v26],
+          ['drinks',  v27]
         ]);
 
         var options = {
@@ -153,6 +227,7 @@
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+
     </script>
   </head>
   
