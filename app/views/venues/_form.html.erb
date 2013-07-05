@@ -57,12 +57,10 @@
         words.each do |word|
    
           if (!tagsArrayList.include?(word))
-              hash = Hash.new
               hash[word] = tagsArrayList.count(word)
               tagsArrayList.push(word)
               hashList.push(hash)
           else
-            hash = Hash.new
             hash[word] = tagsArrayList.count(word)
             hashList.push(hash)
           end
@@ -106,7 +104,7 @@
   }
   %>
 
-<%= "#{:v1}" %>
+<%= "#{v1}" %>
   
  
 
