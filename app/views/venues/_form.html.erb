@@ -11,34 +11,7 @@
     </div>
   <% end %>
 
-
-<script type="text/css">
-  #tags 
-  {
-      width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;
-  }
-</script>
-<script type="text/javascript">
-  function allowDrop(ev)
-  {
-    ev.preventDefault();
-  }
-
-  function drag(ev)
-  {
-    ev.dataTransfer.setData("Text",ev.target.id);
-  } 
-
-  function drop(ev)
-  {
-    ev.preventDefault();
-    var data=ev.dataTransfer.getData("Text");
-    ev.target.appendChild(document.getElementById(data));
-  }
-</script>
-
-
-  <div class="field">
+   <div class="field">
     <%= f.label :venue_name %><br />
     <%= f.text_field :venue_name %>
   </div>
@@ -51,11 +24,13 @@
    <div class="field" id="tags" ondrop="drop(event)" ondragover="allowDrop(event)">
     <%= f.label :tags %><br />
     <%= f.text_field :tags %>
-
   </div>
 
-   Tags used so far: 
+<script src="jquery.js"></script>
+<script src="autocomplete.js"></script>
 
+  Tags used so far: 
+ 
   <%
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
   tagsArrayList = Array.new()
@@ -66,22 +41,32 @@
     if (tags != "insert")
         words = tags.split(',')     
         words.each do |word|
-            if (!tagsArrayList.include?(word))
+   
+          if (!tagsArrayList.include?(word))
               tagsArrayList.push(word)
             end
         end
     end
   }
   %>
-  <div draggable="true" ondragstart="drag(event)">
- <select>
-    <%
+
+ <script type="text/javascript">
+      var array = new Array();
+ </script>
+ 
+  <%
       tagsArrayList.each do |x|
-    %> 
-         <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> 
-    <% end  %> 
- </select> 
- </div>
+  %> 
+       <script type="text/javascript">
+            array.push("#{x}");
+       </script>
+    
+ <% end  %> 
+
+  <script type="text/javascript">
+      var widget = new AutoComplete('tags', array);
+  </script>
+    
 
   <div class="field">
     <%= f.label :latitude %><br />
@@ -95,9 +80,10 @@
     <%= f.label :nytID %><br />
     <%= f.text_field :nytID %>
   </div>
- 
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
