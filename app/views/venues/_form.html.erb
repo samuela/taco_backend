@@ -180,9 +180,9 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart(1));
-      function drawChart(v1) {
-        alert (v1);
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        
        data.addColumn('string', 'Task');
        data.addColumn('number', 'Hours per Day');
        data.addRows([
