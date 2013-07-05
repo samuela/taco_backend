@@ -12,7 +12,7 @@
 
 <p>
   <b>Tags:</b>
-  <%= @venue.tags %> Tags used so far: <%
+  <%= @venue.tags %> <p>Tags used so far: <%
   
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
   tagsArrayList = Array.new()
@@ -34,8 +34,8 @@
   tagsArrayList.each do |x|
     puts "#{x}"
   end
-  %> 
-  
+  %> </p>
+
 </p>
 
 <p>
