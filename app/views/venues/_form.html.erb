@@ -49,6 +49,7 @@
   tagsArrayList = Array.new
   hashList = Array.new
   hash=Hash.new
+  
   result.each { |i| 
     tags = i.fetch('tags')
     
@@ -70,12 +71,9 @@
 
     # Massive and unneccessary, but gets the job done!
 
-    #v1=hash["organic"]
-  
-
   }
 
-    $v1 = "hi"
+    v1 = hash["organic"]
     v2=hash["lunch"]
     v3=hash["brunch"]
     v4=hash["cocktail"]
@@ -104,7 +102,7 @@
     v27=hash["drinks"]
   %>
 
-<%= "#{v1}" %>
+<%= "#{v11}" %>
   
  
 
