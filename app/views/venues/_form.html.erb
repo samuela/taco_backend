@@ -12,6 +12,12 @@
   <% end %>
 
 
+<script type="text/css">
+  #tags 
+  {
+      width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;
+  }
+</script>
 <script type="text/javascript">
   function allowDrop(ev)
   {
@@ -42,7 +48,7 @@
     <%= f.text_field :website %>
   </div>
   
-   <div class="field" ondrop="drop(event)" ondragover="allowDrop(event)">
+   <div class="field" id="tags" ondrop="drop(event)" ondragover="allowDrop(event)">
     <%= f.label :tags %><br />
     <%= f.text_field :tags %>
 
@@ -67,13 +73,15 @@
     end
   }
   %>
+  <div draggable="true" ondragstart="drag(event)">
  <select>
     <%
       tagsArrayList.each do |x|
     %> 
-       <div draggable="true" ondragstart="drag(event)"> <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> </div>
+         <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> 
     <% end  %> 
  </select> 
+ </div>
 
   <div class="field">
     <%= f.label :latitude %><br />
