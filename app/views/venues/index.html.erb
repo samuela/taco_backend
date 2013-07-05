@@ -86,7 +86,7 @@ Read more: http://www.ehow.com/how_8144802_align-bullet-list-html.html#ixzz2Y6AZ
 <% @venues.each do |venue| %>
   <tr>
     <td><%= venue.venue_name %></td>
-    <td><a href="<%= venue.website %>"><%= venue.website %></a></td>
+    <td><a href= "http://<%= venue.website %>"><%= venue.website %></a></td>
     <td><%= venue.tags %></td>
     <td><%= venue.latitude %></td>
     <td><%= venue.longitude %></td>
