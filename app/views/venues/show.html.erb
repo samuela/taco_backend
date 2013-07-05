@@ -12,30 +12,7 @@
 
 <p>
   <b>Tags.....:</b>
-  <%= @venue.tags %> <p>Tags used so far: <%
-  
-  result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
-  tagsArrayList = Array.new()
- 
-  result.each { |i| 
-    tags = i.fetch('tags')
-    puts tags
-    
-    if (tags != "insert")
-        words = tags.split(',')     
-        words.each do |word|
-
-            if (!tagsArrayList.include?(word))
-              tagsArrayList.push(word)
-            end
-        end
-    end
-  }
-  tagsArrayList.each do |x|
-    puts "#{x}"
-  end
-  %> </p>
-
+  <%= @venue.tags %> 
 </p>
 
 <p>
