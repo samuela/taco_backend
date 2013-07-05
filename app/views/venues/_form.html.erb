@@ -60,30 +60,22 @@
  <script type="text/javascript">
       $(function() {
       var array = Array.new()
-
-    });
-
- </script>
- 
-  <%
+      '  <%
       tagsArrayList.each do |x|
-  %> 
-       <script type="text/javascript">
-            //alert ("ok, pushing in arraylist");
+      %> '
+  
             array.push("hi");
             array.push("hello");
             array.push("howdy");
-       </script>
     
- <% end  %> 
+ '<% end  %>'
 
-  <script type="text/javascript">
-      
-     $( "#tags" ).autocomplete({
+    });
+       $( "#tags" ).autocomplete({
       source: array
     });
-  </script>
-    
+
+ </script>
 
   <div class="field">
     <%= f.label :latitude %><br />
