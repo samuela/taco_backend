@@ -60,28 +60,34 @@
  <script type="text/javascript">
       $(function() {
       var array = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
+      "organic",
+      "lunch",
+      "brunch",
+      "cocktail",
+      "dessert",
+      "bar",
+      "dinner",
+      "wine",
+      "local",
+      "american", 
+      "nordic",
+      "happy-hour",
+      "cocktails",
+      "beer",
+      "indian",
+      "indoor", 
+      "lounge",
+      "cheese", 
+      "private", 
+      "tasting", 
+      "italian",
+      "french",
+      "breakfast",
+      "desserts",
+      "steakhouse", 
+      "sushi",
+      "drinks"
+
     ];
 
      $( "#tags" ).autocomplete({
@@ -92,12 +98,14 @@
 
  </script>
  
-  <%
-      tagsArrayList.each do |x| %>
-       <%= "#{x}"%> 
-       
-    
- <% end  %> 
+  <select>
+    <%
+      tagsArrayList.each do |x|
+    %> 
+         <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> 
+    <% end  %> 
+ </select> 
+ 
 
 
   <div class="field">
