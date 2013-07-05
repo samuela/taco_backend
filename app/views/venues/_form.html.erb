@@ -10,9 +10,7 @@
       </ul>
     </div>
   <% end %>
-<body>
-  <div id="chart_div" style="width: 500px; height: 100px; position: relative; left: 40%; "></div>
-</body>
+
 
    <div class="field">
     <%= f.label :venue_name %><br />
@@ -33,6 +31,10 @@
  <input id="tags" <%= f.text_field :tags %> >
 
 </div>
+
+<body>
+  <div id="chart_div" style="width: 500px; height: 200px; position: relative; left: 40%; "></div>
+</body>
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
