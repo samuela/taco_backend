@@ -12,7 +12,7 @@
   <% end %>
 
 
-<script>
+<script type="text/javascript">
   function allowDrop(ev)
   {
     ev.preventDefault();
@@ -71,7 +71,7 @@
     <%
       tagsArrayList.each do |x|
     %> 
-        <option draggable="true" ondragstart="drag(event)" value= <%= "#{x}" %>> <%= "#{x}" %> </option>
+       <div draggable="true" ondragstart="drag(event)"> <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> </div>
     <% end  %> 
  </select> 
 
