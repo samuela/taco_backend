@@ -58,7 +58,7 @@
         words.each do |word|
    
           if (!tagsArrayList.include?(word))
-              hash[word] = tagsArrayList.count(word)
+              hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
           else
@@ -102,21 +102,8 @@
     v27=hash["drinks"]
   %>
 
-<%= "#{v1}" %>
 
-  <%= "#{v2}"%>
-  <%= "#{v3}"%>
-  <%= "#{v4}"%>
-  <%= "#{v5}"%>
-  <%= "#{v6}"%>
-  <%= "#{v7}"%>
-  <%= "#{v8}"%>
-  <%= "#{v9}"%>
-  <%= "#{v10}"%>
   
- 
-
-
  <script type="text/javascript">
       $(function() {
       var array = [
