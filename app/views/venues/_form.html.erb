@@ -71,10 +71,8 @@
   <%
   tagsArrayList.each do |x|
     %> 
-    <!-- <select><option value= <%= x %>> <%= x %> </option></select> !-->
-
-    <%= "#{x}" %>
-     <% end  %> 
+    <select><option value= <%= "#{x}" %>> <%= "#{x}" %> </option></select> 
+    <% end  %> 
 
   <div class="field">
     <%= f.label :latitude %><br />
