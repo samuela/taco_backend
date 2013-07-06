@@ -41,13 +41,76 @@
 
   Tags used so far: 
  
-  <%
+  <%=
   require 'json'
-  require 'open-uri'
+  require 'open-uri' 
+  %>
+
+<%
   occurences =0 
+  result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
+
+  tagsArrayList = Array.new
+  hashList = Array.new
+  hash=Hash.new #out here to make it global
   
+  result.each { |i| 
+    tags = i.fetch('tags')
+    if (tags != "insert")
+        words = tags.split(',')     
+        words.each do |word|
+        word = word.downcase
+        word = word.strip %>
+          <%
+          if (!tagsArrayList.include?(word) && word != "") #key is the word
+              hash[word] = 1
+              tagsArrayList.push(word)
+              hashList.push(hash)
+          else
+            if(word != "")
+              count = hashList[0][word]
+              count += 1
+              hashList[0][word] = count
+              count = 0
+          end
+            
+          end
+        end
+    end
 
 
+    # Massive and unneccessary, but gets the job done!
+
+  }
+
+    v1 = hashList[0]["organic"]
+    v2=hashList[0]["lunch"]
+    v3=hashList[0]["brunch"]
+    v4=hashList[0]["cocktail"]
+    v5=hashList[0]["dessert"]
+    v6=hashList[0]["bar"]
+    v7=hashList[0]["dinner"]
+    v8=hashList[0]["wine"]
+    v9=hashList[0]["local"]
+    v10=hashList[0]["american"]
+    v11=hashList[0]["nordic"]
+    v12=hashList[0]["happy-hour"]
+    v13=hashList[0]["cocktails"]
+    v14=hashList[0]["beer"]
+    v15=hashList[0]["indian"]
+    v16=hashList[0]["indoor"]
+    v17=hashList[0]["lounge"]
+    v18=hashList[0]["cheese"]
+    v19=hashList[0]["private"]
+    v20=hashList[0]["tasting"]
+    v21=hashList[0]["italian"]
+    v22=hashList[0]["french"]
+    v23=hashList[0]["breakfast"]
+    v24=hashList[0]["desserts"]
+    v25=hashList[0]["steakhouse"]
+    v26=hashList[0]["sushi"]
+    v27=hashList[0]["drinks"]
+    v28=hashList[0]["mediterranean"]
   %>
 
 <div style="position:absolute; left: 30%;top:27%;">
@@ -168,6 +231,7 @@
         chart.draw(data, options);
       }
     </script>
+
 
 <% end %>
 
