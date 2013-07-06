@@ -68,7 +68,9 @@
             %>
             <p> IN ELSE: </p> <%= "#{word}"%> ------ <%= "#{tagsArrayList.count(word)}"%>
             <%
-            hash[word] = tagsArrayList.count(word)
+            count = hash[word]
+            count +=1
+            hash[word] = count
             hashList.push(hash)
           end
         end
