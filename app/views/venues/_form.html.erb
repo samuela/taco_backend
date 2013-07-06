@@ -57,7 +57,6 @@
         words = tags.split(',')     
         words.each do |word|
         word = word.downcase %>
-          <%= "#{word}" %>
           <%
           if (!tagsArrayList.include?(word)) #key is the word
               hash[word] = 1
