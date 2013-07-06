@@ -64,14 +64,8 @@
               tagsArrayList.push(word)
               hashList.push(hash)
           else
-            %>
-            <p> IN ELSE: </p> <%= "#{word}"%> ------ <%= "#{tagsArrayList.count(word)}"%>
-            <%
-            turnIntoTempHash = Hash[tagsArrayList.map.with_index.to_a] 
-            index = turnIntoTempHash[word]
-            %> INDEX: -- <%="#{index}"%>
-            <% count = hashList[index][word] %> COUNT IS --- <%="#{count}"%>
-            <%
+           
+            count = hashList[0][word]
             count += 1
             hashList[0][word] = count
             hashList.push(hash)
@@ -85,32 +79,32 @@
   }
 
     v1 = hashList[0]["organic"]
-    v2=hashList[1]["lunch"]
-    v3=hashList[2]["brunch"]
-    v4=hashList[3]["cocktail"]
-    v5=hashList[4]["dessert"]
-    v6=hashList[5]["bar"]
-    v7=hashList[6]["dinner"]
-    v8=hashList[7]["wine"]
-    v9=hashList[8]["local"]
-    v10=hashList[9]["american"]
-    v11=hashList[10]["nordic"]
-    v12=hashList[11]["happy-hour"]
-    v13=hashList[12]["cocktails"]
-    v14=hashList[13]["beer"]
-    v15=hashList[14]["indian"]
-    v16=hashList[15]["indoor"]
-    v17=hashList[16]["lounge"]
-    v18=hashList[17]["cheese"]
-    v19=hashList[18]["private"]
-    v20=hashList[19]["tasting"]
-    v21=hashList[20]["italian"]
-    v22=hashList[21]["french"]
-    v23=hashList[22]["breakfast"]
-    v24=hashList[23]["desserts"]
-    v25=hashList[24]["steakhouse"]
-    v26=hashList[25]["sushi"]
-    v27=hashList[26]["drinks"]
+    v2=hashList[0]["lunch"]
+    v3=hashList[0]["brunch"]
+    v4=hashList[0]["cocktail"]
+    v5=hashList[0]["dessert"]
+    v6=hashList[0]["bar"]
+    v7=hashList[0]["dinner"]
+    v8=hashList[0]["wine"]
+    v9=hashList[0]["local"]
+    v10=hashList[0]["american"]
+    v11=hashList[0]["nordic"]
+    v12=hashList[0]["happy-hour"]
+    v13=hashList[0]["cocktails"]
+    v14=hashList[0]["beer"]
+    v15=hashList[0]["indian"]
+    v16=hashList[0]["indoor"]
+    v17=hashList[0]["lounge"]
+    v18=hashList[0]["cheese"]
+    v19=hashList[0]["private"]
+    v20=hashList[0]["tasting"]
+    v21=hashList[0]["italian"]
+    v22=hashList[0]["french"]
+    v23=hashList[0]["breakfast"]
+    v24=hashList[0]["desserts"]
+    v25=hashList[0]["steakhouse"]
+    v26=hashList[0]["sushi"]
+    v27=hashList[0]["drinks"]
   %>
 
 
