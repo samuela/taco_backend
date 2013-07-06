@@ -72,7 +72,8 @@
             %> INDEX: -- <%="#{index}"%>
             <% count = hashList[index][word] %> COUNT IS --- <%="#{count}"%>
             <%
-            hash[word] = 1
+            count += 1
+            hashList[0][word] = count
             hashList.push(hash)
           end
         end
