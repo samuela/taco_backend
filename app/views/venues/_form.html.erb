@@ -41,41 +41,9 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" href="/resources/demos/style.css" />
 
-  Tags used so far: 
+  <!--Tags used so far: !--> 
 
-<% @options.each do |option| 
-  v1 = option.t1
-  v2=option.t2
-  v3=option.t3
-  v4=option.t4
-  v5=option.t5
-  v6=option.t6
-  v7=option.t7
-  v8=option.t8
-  v9=option.t9
-  v10=option.t10
-  v11=option.t11
-  v12=option.t12
-  v13=option.t13
-  v14=option.t14
-  v15=option.t15
-  v16=option.t16
-  v17=option.t17
-  v18=option.t18
-  v19=option.t19
-  v20=option.t20
-  v21=option.t21
-  v22=option.t22
-  v23=option.t23
-  v24=option.t24
-  v25=option.t25
-  v26=option.t26
-  v27=option.t27
-  v28=option.t28
-  v29=option.t29
-  v30=option.t30
-end
-  %>
+
 
 <div style="position:absolute; left: 30%;top:27%;">
   <select>
@@ -145,58 +113,6 @@ end
   <div class="actions">
     <%= f.submit %>
   </div>
-
-
-
- 
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>','<%="#{v27}"%>','%="#{v28}"%>','%="#{v29}"%>','%="#{v30}"%>')});
-      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28,v29,v30) {
-        //alert (v1);
-        var data = google.visualization.arrayToDataTable([
-          ['Name', 'Occurences'],
-          ['organic', parseInt(v1)],
-          ['lunch', parseInt(v2)],
-          ['brunch', parseInt(v3)],
-          ['cocktail', parseInt(v4)],
-          ['dessert', parseInt(v5)],
-          ['bar', parseInt(v6)],
-          ['dinner', parseInt(v7)],
-          ['wine', parseInt(v8)],
-          ['local', parseInt(v9)],
-          ['american', parseInt(v10)],
-          ['nordic', parseInt(v11)],
-          ['happy-hour', parseInt(v12)],
-          ['cocktails', parseInt(v13)],
-          ['beer', parseInt(v14)],
-          ['indian', parseInt(v15)],
-          ['indoor', parseInt(v16)],
-          ['lounge', parseInt(v17)],
-          ['cheese', parseInt(v18)],
-          ['private', parseInt(v19)],
-          ['tasting', parseInt(v20)],
-          ['italian', parseInt(v21)],
-          ['french',  parseInt(v22)],
-          ['breakfast', parseInt(v23)],
-          ['desserts', parseInt(v24)],
-          ['steakhouse', parseInt(v25)],
-          ['sushi', parseInt(v26)],
-          ['drinks', parseInt(v27)],
-          ['mediterranean', parseInt(v28)],
-          ['delivery', parseInt(v29)],
-          ['greek', parseInt(v30)]
-          ]);
-        var options = {
-          title: 'Tag Occurences',
-          hAxis: {slantedTextAngle: 90, maxTextLines: 10, title: 'Tag Name', titleTextStyle: {color: 'black'}}
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
 
 
 <% end %>
