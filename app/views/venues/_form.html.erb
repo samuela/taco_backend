@@ -65,10 +65,12 @@
               tagsArrayList.push(word)
               hashList.push(hash)
           else
-            count = hashList[0][word]
-            count += 1
-            hashList[0][word] = count
-            count = 0
+            if(word != "")
+              count = hashList[0][word]
+              count += 1
+              hashList[0][word] = count
+              count = 0
+          end
             
           end
         end
