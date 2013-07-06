@@ -22,10 +22,7 @@
     <%= f.label :website %><br />
     <%= f.text_field :website %>
   </div>
-  
-   <!-- <div class="field">
-    
-  </div> -->
+
 
 <div class="ui-widget">
   <%= f.label :tags %><br />
@@ -45,8 +42,7 @@
   Tags used so far: 
  
   <%
-  require 'json'
-  require 'open-uri'
+ 
   occurences =0 
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
 
@@ -165,11 +161,6 @@
 
  </script>
 
- 
-
- 
-
-
   <div class="field">
     <%= f.label :latitude %><br />
     <%= f.text_field :latitude %>
@@ -236,15 +227,6 @@
         chart.draw(data, options);
       }
     </script>
-
-  
-
-
-
-
-
-
-
 
 <% end %>
 
