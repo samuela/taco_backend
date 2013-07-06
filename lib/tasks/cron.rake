@@ -4,7 +4,7 @@ require 'json'
 require 'open-uri'
 require 'pp'
 require 'active_support/all'
-
+#require 'rake'
 
 #Category Unique ID's (in order):
 #--------------------------
@@ -19,7 +19,7 @@ require 'active_support/all'
 # timeless -- (Only in New York)
 # More Events
 #--------------------------------
-namespace :cron do
+#namespace :cron do
 task :get_tags => :environment do
 
 occurences =0 
@@ -95,9 +95,8 @@ occurences =0
   
 
   #tagsArrayList.sort
-  #tagsArrayList.each do |x|
-    #puts x
-  #end
+  tagsArrayList.each do |x|
+    puts x
+  end
 
-end
 end
