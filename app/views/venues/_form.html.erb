@@ -59,7 +59,7 @@
         word = word.downcase %>
           <%
           if (!tagsArrayList.include?(word)) #key is the word
-              %> <%= "#{word}" %> <%
+              %> <%= # "#{word}" %> <%
               hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
@@ -105,9 +105,16 @@
     v25=hashList[0]["steakhouse"]
     v26=hashList[0]["sushi"]
     v27=hashList[0]["drinks"]
+    v28=hashList[0]["mediterranean"]
   %>
 
-
+  <select>
+    <%
+      tagsArrayList.each do |x|
+    %> 
+         <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> 
+    <% end  %> 
+ </select> 
   
  <script type="text/javascript">
       $(function() {
@@ -138,7 +145,8 @@
       "desserts",
       "steakhouse", 
       "sushi",
-      "drinks"
+      "drinks",
+      "mediterranean"
 
     ];
 
@@ -151,13 +159,7 @@
  </script>
 
  
-  <select>
-    <%
-      tagsArrayList.each do |x|
-    %> 
-         <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> 
-    <% end  %> 
- </select> 
+
  
 
 
@@ -184,8 +186,8 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>')});
-      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27) {
+      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>','<%="#{v27}"%>')});
+      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28) {
         //alert (v1);
         var data = google.visualization.arrayToDataTable([
           ['Name', 'Occurences'],
@@ -215,7 +217,8 @@
           ['desserts', parseInt(v24)],
           ['steakhouse', parseInt(v25)],
           ['sushi', parseInt(v26)],
-          ['drinks', parseInt(v27)]
+          ['drinks', parseInt(v27)],
+          ['mediterranean', parseInt(v28)]
           ]);
         var options = {
           title: 'Tag Occurences',
