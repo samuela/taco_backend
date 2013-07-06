@@ -26,6 +26,6 @@ end
 
 
 tagsArrayList.each do |word|
-	puts word
+	#puts word
 end
 #pp result
