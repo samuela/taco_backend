@@ -71,8 +71,8 @@
             turnIntoTempHash = Hash[tagsArrayList.map.with_index.to_a] 
             index = turnIntoTempHash[word]
             %> INDEX: -- <%="#{index}"%>
-            <% #count = hashList[index][word]
-            #count += 1
+            <% count = hashList[index][word] %> COUNT IS --- <%="#{count}"%>
+            <%
             hash[word] = 1
             hashList.push(hash)
           end
