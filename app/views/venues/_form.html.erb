@@ -47,6 +47,7 @@
   <%
   occurences =0 
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
+
   tagsArrayList = Array.new
   hashList = Array.new
   hash=Hash.new #out here to make it global
@@ -56,9 +57,10 @@
     if (tags != "insert")
         words = tags.split(',')     
         words.each do |word|
-        word = word.downcase %>
+        word = word.downcase
+        word = word.strip %>
           <%
-          if (!tagsArrayList.include?(word)) #key is the word
+          if (!tagsArrayList.include?(word) && word != "") #key is the word
               hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
