@@ -68,7 +68,9 @@
             %>
             <p> IN ELSE: </p> <%= "#{word}"%> ------ <%= "#{tagsArrayList.count(word)}"%>
             <%
-            count = hash[word]
+            turnIntoTempHash = Hash[tagsArrayList.map.with_index.to_a] 
+            index = turnIntoTempHash[word]
+            count = hashList[index][word]
             count +=1
             hash[word] = count
             hashList.push(hash)
