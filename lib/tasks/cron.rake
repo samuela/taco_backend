@@ -95,8 +95,8 @@ occurences =0
   
 
   #tagsArrayList.sort
-  tagsArrayList.each do |x|
-    puts x
-  end
+  #tagsArrayList.each do |x|
+    #puts x
+  #end
 
 end
