@@ -1,6 +1,41 @@
 <h1>Listing options</h1>
 
-<% @options.each do |option| 
+<% 
+
+v1=0
+v2=0
+v3=0
+v4=0
+v5=0
+v6=0
+v7=0
+v8=0
+v9=0
+v10=0
+v11=0
+v12=0
+v13=0
+v14=0
+v15=0
+v16=0
+v17=0
+v18=0
+v19=0
+v20=0
+v21=0
+v22=0
+v23=0
+v24=0
+v25=0
+v26=0
+v27=0
+v28=0
+v29=0
+v30=0
+
+
+
+@options.each do |option| 
   
   v1 = option.t1
   v2=option.t2
@@ -38,29 +73,56 @@ end
  <div id="chart_div" style="width: 600px; height: 200px; position: relative; left: 15%; "></div>
 
 <br />
-  
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-        ]);
 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      google.load("visualization", "1", {packages:["corechart"]});
+      
+      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>','<%="#{v27}"%>','%="#{v28}"%>','%="#{v29}"%>','%="#{v30}"%>')});
+      
+      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28,v29,v30) {
+        //alert (v1);
+        var data = google.visualization.arrayToDataTable([
+          ['Name', 'Occurences'],
+          ['organic', parseInt(v1)],
+          ['lunch', parseInt(v2)],
+          ['brunch', parseInt(v3)],
+          ['cocktail', parseInt(v4)],
+          ['dessert', parseInt(v5)],
+          ['bar', parseInt(v6)],
+          ['dinner', parseInt(v7)],
+          ['wine', parseInt(v8)],
+          ['local', parseInt(v9)],
+          ['american', parseInt(v10)],
+          ['nordic', parseInt(v11)],
+          ['happy-hour', parseInt(v12)],
+          ['cocktails', parseInt(v13)],
+          ['beer', parseInt(v14)],
+          ['indian', parseInt(v15)],
+          ['indoor', parseInt(v16)],
+          ['lounge', parseInt(v17)],
+          ['cheese', parseInt(v18)],
+          ['private', parseInt(v19)],
+          ['tasting', parseInt(v20)],
+          ['italian', parseInt(v21)],
+          ['french',  parseInt(v22)],
+          ['breakfast', parseInt(v23)],
+          ['desserts', parseInt(v24)],
+          ['steakhouse', parseInt(v25)],
+          ['sushi', parseInt(v26)],
+          ['drinks', parseInt(v27)],
+          ['mediterranean', parseInt(v28)],
+          ['delivery', parseInt(v29)],
+          ['greek', parseInt(v30)]
+          ]);
+       
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+          title: 'Tag Occurences',
+          hAxis: {slantedTextAngle: 90, maxTextLines: 10, title: 'Tag Name', titleTextStyle: {color: 'black'}}
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
-
-
-    
