@@ -57,13 +57,17 @@
     if (tags != "insert")
         words = tags.split(',')     
         words.each do |word|
-          word = word.downcase
+          word = word.downcase %>
+          <%= "#{word}" %>
+          <%
           if (!tagsArrayList.include?(word))
               hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
           else
-
+            %>
+            <p> This word occurs this many times: </p> <%= "#{tagsArrayList.count(word)}"%>
+            <%
             hash[word] = tagsArrayList.count(word)
             hashList.push(hash)
           end
