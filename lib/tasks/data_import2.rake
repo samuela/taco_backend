@@ -19,6 +19,7 @@ require 'active_support/all'
 # timeless -- (Only in New York)
 # More Events
 #--------------------------------
+namespace :cron do
 task :get_tags => :environment do
 
 occurences =0 
@@ -88,7 +89,7 @@ occurences =0
   :t29 => hashList[0]["delivery"].to_s,
   :t30 => hashList[0]["greek"].to_s
 
-    option.save
+  option.save
   
   #puts "------------------printing out current tags------------------------"
   
@@ -98,4 +99,5 @@ occurences =0
     #puts x
   #end
 
+end
 end
