@@ -49,20 +49,21 @@
   result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
   tagsArrayList = Array.new
   hashList = Array.new
-  hash=Hash.new
+  hash=Hash.new #out here to make it global
   
   result.each { |i| 
     tags = i.fetch('tags')
-    
+    hash = Hash.new
     if (tags != "insert")
         words = tags.split(',')     
         words.each do |word|
-   
+          word = word.downcase
           if (!tagsArrayList.include?(word))
               hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
           else
+
             hash[word] = tagsArrayList.count(word)
             hashList.push(hash)
           end
