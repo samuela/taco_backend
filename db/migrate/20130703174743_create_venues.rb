@@ -5,7 +5,7 @@ class CreateVenues < ActiveRecord::Migration
       t.string :latitude
       t.string :longitude
       t.string :nytID
-      t.string :time_of_day
+      t.string :tags
       t.string :venue_name
       t.string :website
       t.timestamps

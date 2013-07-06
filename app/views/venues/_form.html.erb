@@ -1,7 +1,4 @@
- <%
-  require 'json'
-  require 'open-uri' 
-  %>
+
 
 <%= form_for(@venue) do |f| %>
   <% if @venue.errors.any? %>
@@ -45,88 +42,38 @@
 <link rel="stylesheet" href="/resources/demos/style.css" />
 
   Tags used so far: 
- 
- 
-
-<%
-  occurences =0 
-  result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-
-  tagsArrayList = Array.new
-  hashList = Array.new
-  hash=Hash.new #out here to make it global
-  
-  result.each { |i| 
-    tags = i.fetch('tags')
-    if (tags != "insert")
-        words = tags.split(',')     
-        words.each do |word|
-        word = word.downcase
-        word = word.strip %>
-          <%
-          if (!tagsArrayList.include?(word) && word != "") #key is the word
-              hash[word] = 1
-              tagsArrayList.push(word)
-              hashList.push(hash)
-          else
-            if(word != "")
-              count = hashList[0][word]
-              count += 1
-              hashList[0][word] = count
-              count = 0
-          end
-            
-          end
-        end
-    end
-
-
-    # Massive and unneccessary, but gets the job done!
-
-  }
-
-    v1 = hashList[0]["organic"]
-    v2=hashList[0]["lunch"]
-    v3=hashList[0]["brunch"]
-    v4=hashList[0]["cocktail"]
-    v5=hashList[0]["dessert"]
-    v6=hashList[0]["bar"]
-    v7=hashList[0]["dinner"]
-    v8=hashList[0]["wine"]
-    v9=hashList[0]["local"]
-    v10=hashList[0]["american"]
-    v11=hashList[0]["nordic"]
-    v12=hashList[0]["happy-hour"]
-    v13=hashList[0]["cocktails"]
-    v14=hashList[0]["beer"]
-    v15=hashList[0]["indian"]
-    v16=hashList[0]["indoor"]
-    v17=hashList[0]["lounge"]
-    v18=hashList[0]["cheese"]
-    v19=hashList[0]["private"]
-    v20=hashList[0]["tasting"]
-    v21=hashList[0]["italian"]
-    v22=hashList[0]["french"]
-    v23=hashList[0]["breakfast"]
-    v24=hashList[0]["desserts"]
-    v25=hashList[0]["steakhouse"]
-    v26=hashList[0]["sushi"]
-    v27=hashList[0]["drinks"]
-    v28=hashList[0]["mediterranean"]
+<% @options.each do |option| 
+  v1 = option.t1
+  v2=option.t2
+  v3=option.t3
+  v4=option.t4
+  v5=option.t5
+  v6=option.t6
+  v7=option.t7
+  v8=option.t8
+  v9=option.t9
+  v10=option.t10
+  v11=option.t11
+  v12=option.t12
+  v13=option.t13
+  v14=option.t14
+  v15=option.t15
+  v16=option.t16
+  v17=option.t17
+  v18=option.t18
+  v19=option.t19
+  v20=option.t20
+  v21=option.t21
+  v22=option.t22
+  v23=option.t23
+  v24=option.t24
+  v25=option.t25
+  v26=option.t26
+  v27=option.t27
+  v28=option.t28
+  v29=option.t29
+  v30=option.t30
   %>
 
 <div style="position:absolute; left: 30%;top:27%;">
@@ -204,8 +151,8 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>','<%="#{v27}"%>')});
-      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28) {
+      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>','<%="#{v27}"%>','%="#{v28}"%>','%="#{v29}"%>','%="#{v30}"%>')});
+      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28,v29,v30) {
         //alert (v1);
         var data = google.visualization.arrayToDataTable([
           ['Name', 'Occurences'],
@@ -236,7 +183,9 @@
           ['steakhouse', parseInt(v25)],
           ['sushi', parseInt(v26)],
           ['drinks', parseInt(v27)],
-          ['mediterranean', parseInt(v28)]
+          ['mediterranean', parseInt(v28)],
+          ['delivery', parseInt(v29)],
+          ['greek', parseInt(v30)]
           ]);
         var options = {
           title: 'Tag Occurences',

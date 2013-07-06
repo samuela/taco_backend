@@ -1,0 +1,137 @@
+<%= form_for(@option) do |f| %>
+  <% if @option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@option.errors.count, "error") %> prohibited this option from being saved:</h2>
+
+      <ul>
+      <% @option.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :t1 %><br />
+    <%= f.text_field :t1 %>
+  </div>
+  <div class="field">
+    <%= f.label :t2 %><br />
+    <%= f.text_field :t2 %>
+  </div>
+  <div class="field">
+    <%= f.label :t3 %><br />
+    <%= f.text_field :t3 %>
+  </div>
+  <div class="field">
+    <%= f.label :t4 %><br />
+    <%= f.text_field :t4 %>
+  </div>
+  <div class="field">
+    <%= f.label :t5 %><br />
+    <%= f.text_field :t5 %>
+  </div>
+  <div class="field">
+    <%= f.label :t6 %><br />
+    <%= f.text_field :t6 %>
+  </div>
+  <div class="field">
+    <%= f.label :t7 %><br />
+    <%= f.text_field :t7 %>
+  </div>
+  <div class="field">
+    <%= f.label :t8 %><br />
+    <%= f.text_field :t8 %>
+  </div>
+  <div class="field">
+    <%= f.label :t9 %><br />
+    <%= f.text_field :t9 %>
+  </div>
+  <div class="field">
+    <%= f.label :t10 %><br />
+    <%= f.text_field :t10 %>
+  </div>
+  <div class="field">
+    <%= f.label :t11 %><br />
+    <%= f.text_field :t11 %>
+  </div>
+  <div class="field">
+    <%= f.label :t12 %><br />
+    <%= f.text_field :t12 %>
+  </div>
+  <div class="field">
+    <%= f.label :t13 %><br />
+    <%= f.text_field :t13 %>
+  </div>
+  <div class="field">
+    <%= f.label :t14 %><br />
+    <%= f.text_field :t14 %>
+  </div>
+  <div class="field">
+    <%= f.label :t15 %><br />
+    <%= f.text_field :t15 %>
+  </div>
+  <div class="field">
+    <%= f.label :t16 %><br />
+    <%= f.text_field :t16 %>
+  </div>
+  <div class="field">
+    <%= f.label :t17 %><br />
+    <%= f.text_field :t17 %>
+  </div>
+  <div class="field">
+    <%= f.label :t18 %><br />
+    <%= f.text_field :t18 %>
+  </div>
+  <div class="field">
+    <%= f.label :t19 %><br />
+    <%= f.text_field :t19 %>
+  </div>
+  <div class="field">
+    <%= f.label :t20 %><br />
+    <%= f.text_field :t20 %>
+  </div>
+  <div class="field">
+    <%= f.label :t21 %><br />
+    <%= f.text_field :t21 %>
+  </div>
+  <div class="field">
+    <%= f.label :t22 %><br />
+    <%= f.text_field :t22 %>
+  </div>
+  <div class="field">
+    <%= f.label :t23 %><br />
+    <%= f.text_field :t23 %>
+  </div>
+  <div class="field">
+    <%= f.label :t24 %><br />
+    <%= f.text_field :t24 %>
+  </div>
+  <div class="field">
+    <%= f.label :t25 %><br />
+    <%= f.text_field :t25 %>
+  </div>
+  <div class="field">
+    <%= f.label :t26 %><br />
+    <%= f.text_field :t26 %>
+  </div>
+  <div class="field">
+    <%= f.label :t27 %><br />
+    <%= f.text_field :t27 %>
+  </div>
+  <div class="field">
+    <%= f.label :t28 %><br />
+    <%= f.text_field :t28 %>
+  </div>
+  <div class="field">
+    <%= f.label :t29 %><br />
+    <%= f.text_field :t29 %>
+  </div>
+  <div class="field">
+    <%= f.label :t30 %><br />
+    <%= f.text_field :t30 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

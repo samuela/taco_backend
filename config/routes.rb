@@ -1,4 +1,10 @@
 TacoBackend::Application.routes.draw do
+  resources :options
+
+
+  resources :tags
+
+
   resources :venues
 
 
