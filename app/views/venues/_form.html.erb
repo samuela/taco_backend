@@ -1,3 +1,8 @@
+ <%
+  require 'json'
+  require 'open-uri' 
+  %>
+
 <%= form_for(@venue) do |f| %>
   <% if @venue.errors.any? %>
     <div id="error_explanation">
@@ -41,10 +46,7 @@
 
   Tags used so far: 
  
-  <%=
-  require 'json'
-  require 'open-uri' 
-  %>
+ 
 
 <%
   occurences =0 
