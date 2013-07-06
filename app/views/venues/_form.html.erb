@@ -1,4 +1,9 @@
+ <%
+  require 'rubygems'
+  require 'json'
+  require 'open-uri' 
 
+  %>
 
 <%= form_for(@venue) do |f| %>
   <% if @venue.errors.any? %>
@@ -41,10 +46,87 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" href="/resources/demos/style.css" />
 
-  <!--Tags used so far: !--> 
+  Tags used so far: 
+ 
+ 
+
+<%
+  occurences =0 
+  result = JSON.parse open('http://nyt-project-taco.herokuapp.com/venues.json').read
+
+  tagsArrayList = Array.new
+  hashList = Array.new
+  hash=Hash.new #out here to make it global
+  
+  result.each { |i| 
+    tags = i.fetch('tags')
+    if (tags != "insert")
+        words = tags.split(',')     
+        words.each do |word|
+        word = word.downcase
+        word = word.strip %>
+          <%
+          if (!tagsArrayList.include?(word) && word != "") #key is the word
+              hash[word] = 1
+              tagsArrayList.push(word)
+              hashList.push(hash)
+          else
+            if(word != "")
+              count = hashList[0][word]
+              count += 1
+              hashList[0][word] = count
+              count = 0
+          end
+            
+          end
+        end
+    end
 
 
+    # Massive and unneccessary, but gets the job done!
 
+  }
+
+    v1 = hashList[0]["organic"]
+    v2=hashList[0]["lunch"]
+    v3=hashList[0]["brunch"]
+    v4=hashList[0]["cocktail"]
+    v5=hashList[0]["dessert"]
+    v6=hashList[0]["bar"]
+    v7=hashList[0]["dinner"]
+    v8=hashList[0]["wine"]
+    v9=hashList[0]["local"]
+    v10=hashList[0]["american"]
+    v11=hashList[0]["nordic"]
+    v12=hashList[0]["happy-hour"]
+    v13=hashList[0]["cocktails"]
+    v14=hashList[0]["beer"]
+    v15=hashList[0]["indian"]
+    v16=hashList[0]["indoor"]
+    v17=hashList[0]["lounge"]
+    v18=hashList[0]["cheese"]
+    v19=hashList[0]["private"]
+    v20=hashList[0]["tasting"]
+    v21=hashList[0]["italian"]
+    v22=hashList[0]["french"]
+    v23=hashList[0]["breakfast"]
+    v24=hashList[0]["desserts"]
+    v25=hashList[0]["steakhouse"]
+    v26=hashList[0]["sushi"]
+    v27=hashList[0]["drinks"]
+    v28=hashList[0]["mediterranean"]
+  %>
+
+<div style="position:absolute; left: 30%;top:27%;">
+  <select>
+    <%
+      tagsArrayList.each do |x|
+    %> 
+         <option value= <%= "#{x}" %>> <%= "#{x}" %> </option> 
+    <% end  %> 
+ </select> 
+</div>
+  
  <script type="text/javascript">
       $(function() {
       var array = [
@@ -103,6 +185,56 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
+ 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(function(){drawChart('<%= "#{v1}"%>','<%="#{v2}"%>','<%="#{v3}"%>','<%="#{v4}"%>','<%="#{v5}"%>','<%="#{v6}"%>','<%="#{v7}"%>','<%="#{v8}"%>','<%="#{v9}"%>','<%="#{v10}"%>','<%="#{v11}"%>','<%="#{v12}"%>','<%="#{v13}"%>','<%="#{v14}"%>','<%="#{v15}"%>','<%="#{v16}"%>','<%="#{v17}"%>','<%="#{v18}"%>','<%="#{v19}"%>','<%="#{v20}"%>','<%="#{v21}"%>','<%="#{v22}"%>','<%="#{v23}"%>','<%="#{v24}"%>','<%="#{v25}"%>','<%="#{v26}"%>','<%="#{v27}"%>','<%="#{v27}"%>')});
+      function drawChart(v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28) {
+        //alert (v1);
+        var data = google.visualization.arrayToDataTable([
+          ['Name', 'Occurences'],
+          ['organic', parseInt(v1)],
+          ['lunch', parseInt(v2)],
+          ['brunch', parseInt(v3)],
+          ['cocktail', parseInt(v4)],
+          ['dessert', parseInt(v5)],
+          ['bar', parseInt(v6)],
+          ['dinner', parseInt(v7)],
+          ['wine', parseInt(v8)],
+          ['local', parseInt(v9)],
+          ['american', parseInt(v10)],
+          ['nordic', parseInt(v11)],
+          ['happy-hour', parseInt(v12)],
+          ['cocktails', parseInt(v13)],
+          ['beer', parseInt(v14)],
+          ['indian', parseInt(v15)],
+          ['indoor', parseInt(v16)],
+          ['lounge', parseInt(v17)],
+          ['cheese', parseInt(v18)],
+          ['private', parseInt(v19)],
+          ['tasting', parseInt(v20)],
+          ['italian', parseInt(v21)],
+          ['french',  parseInt(v22)],
+          ['breakfast', parseInt(v23)],
+          ['desserts', parseInt(v24)],
+          ['steakhouse', parseInt(v25)],
+          ['sushi', parseInt(v26)],
+          ['drinks', parseInt(v27)],
+          ['mediterranean', parseInt(v28)]
+          ]);
+        var options = {
+          title: 'Tag Occurences',
+          hAxis: {slantedTextAngle: 90, maxTextLines: 10, title: 'Tag Name', titleTextStyle: {color: 'black'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 
 
 <% end %>
