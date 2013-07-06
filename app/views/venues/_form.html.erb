@@ -59,6 +59,7 @@
         word = word.downcase %>
           <%
           if (!tagsArrayList.include?(word)) #key is the word
+              %> <%= "#{word}" %> <%
               hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
