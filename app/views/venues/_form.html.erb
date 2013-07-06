@@ -53,14 +53,13 @@
   
   result.each { |i| 
     tags = i.fetch('tags')
-    hash = Hash.new
     if (tags != "insert")
         words = tags.split(',')     
         words.each do |word|
         word = word.downcase %>
           <%= "#{word}" %>
           <%
-          if (!tagsArrayList.include?(word))
+          if (!tagsArrayList.include?(word)) #key is the word
               hash[word] = 1
               tagsArrayList.push(word)
               hashList.push(hash)
@@ -71,7 +70,7 @@
             turnIntoTempHash = Hash[tagsArrayList.map.with_index.to_a] 
             index = turnIntoTempHash[word]
             %> INDEX: -- <%="#{index}"%>
-            <% count = hashList[index] %> COUNT IS --- <%="#{count}"%>
+            <% count = hashList[index][word] %> COUNT IS --- <%="#{count}"%>
             <%
             hash[word] = 1
             hashList.push(hash)
