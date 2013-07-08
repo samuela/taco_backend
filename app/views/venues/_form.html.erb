@@ -13,8 +13,8 @@
     </div>
   <% end %>
 
-   <div class="field">
-    <%= f.label :venue_name %><br />
+   <div class="field" id="venue_name">
+    <label for="venue_tags" style="position:relative; left:30%;"><%= f.label :venue_name %></label><br />
     <%= f.text_field :venue_name %>
   </div>
   
@@ -68,6 +68,15 @@
     color: #fff
     background: rgba(57,60,61,0.8);
     
+  }
+
+  #venue_name 
+  {
+    position:relative; 
+    left: 30%;
+    padding-bottom: 5px;
+
+
   }
 
   #venue_tags
