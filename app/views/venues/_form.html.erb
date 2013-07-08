@@ -37,13 +37,19 @@
   .actions {
     padding-top:10px;
   }
+
+  .tags {
+
+    position:relative; 
+    left: 30%
+  }
   
 
 </style>
 
 <div class="ui-widget">
   <label for="venue_tags" style="position:relative; left:30%;"><%= f.label :tags %></label><br />
- <input id="tags" size="80" style="position:relative; left: 30%" <%= f.text_field :tags %> 
+ <input id="tags" size="80" <%= f.text_field :tags %> 
 
 </div>
 
@@ -79,7 +85,8 @@
       "steakhouse", 
       "sushi",
       "drinks",
-      "mediterranean"
+      "mediterranean",
+      "outdoor"
 
     ];
 
