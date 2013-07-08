@@ -13,10 +13,7 @@
     </div>
   <% end %>
 
-   <div class="field" id="venue_name">
-   <%= f.label :venue_name %><br />
-    <%= f.text_field :venue_name %>
-  </div>
+  
   
   <!-- <div class="field">
     <%= f.label :website %><br />
@@ -76,6 +73,13 @@
     
   }
 
+  #entire_page 
+  {
+      width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
   #venue_name 
   {
     position:relative; 
@@ -118,6 +122,14 @@
 
 </style>
 
+<div id = "entire_page">
+
+
+ <div class="field" id="venue_name">
+   <%= f.label :venue_name %><br />
+    <%= f.text_field :venue_name %>
+  </div>
+
 <div class="ui-widget">
   
   <label for="venue_tags" style="position:relative; left:30%;"><%= f.label :tags %></label><br />
@@ -128,7 +140,11 @@
 
   <!--Tags used so far: !--> 
 
+  <div class="actions">
+    <%= f.submit %> 
+  </div>
 
+</div>
 
  <script type="text/javascript">
 
@@ -224,9 +240,7 @@
     <%= f.text_field :nytID %>
   </div> -->
 
-  <div class="actions">
-    <%= f.submit %> 
-  </div>
+
 
 <% end %>
 
