@@ -24,21 +24,26 @@
   </div> -->
 
 <style type="text/css">
-  input[type="submit"] {
+  
+  input[type="submit"] 
+  {
     position: relative;
     left:48%;
   }
 
-  a {
+  a 
+  {
     position:relative;
     left:30%;
   }
 
-  .actions {
+  .actions 
+  {
     padding-top:10px;
   }
 
-  #tags {
+  #tags 
+  {
 
     position:relative; 
     left: 30%;
@@ -67,6 +72,11 @@
 </div>
 
   <!--Tags used so far: !--> 
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
 
  <script type="text/javascript">
       $(function() {
@@ -161,7 +171,6 @@
   <div class="actions">
     <%= f.submit %> 
   </div>
-
 
 <% end %>
 
