@@ -1,15 +1,10 @@
 TacoBackend::Application.routes.draw do
   resources :options
-
-
   resources :tags
-
-
   resources :venues
-
-
   resources :categories
 
+  root :to => "venues#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

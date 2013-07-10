@@ -1,6 +1,5 @@
 class CreateVenues < ActiveRecord::Migration
   def change
-    drop_table :venues
     create_table :venues do |t|
       t.string :latitude
       t.string :longitude
