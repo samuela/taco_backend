@@ -1,32 +1,26 @@
-
-
 <%= form_for(@venue) do |f| %>
-  <% if @venue.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+<% if @venue.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+  <ul>
+    <% @venue.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-      <ul>
-      <% @venue.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  
-  
   <!-- <div class="field">
     <%= f.label :website %><br />
     <%= f.text_field :website %>
   </div> -->
 
-
- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css" />
 
-<style type="text/css">
+  <style type="text/css">
   
   input[type="submit"] 
   {
@@ -60,7 +54,6 @@
 
   #tags 
   {
-
     position:relative; 
     /*left: 30%;*/
     border: 1px solid #000;
@@ -75,10 +68,10 @@
 
   #entire_page 
   {
-      width: 700px;
-      padding-top:40px;
-      margin-left: auto;
-      margin-right: auto;
+    width: 700px;
+    padding-top:40px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #venue_name 
@@ -87,9 +80,6 @@
     /*left: 30%; */
     padding-bottom: 60px;
     padding-top: 70px;
-
-
-
   }
 
   #venue_tags
@@ -110,7 +100,7 @@
   .ui-autocomplete li:hover
   {
     width: 100%;
- 
+
   }
 
   .ui-menu, .ui-menu-item {
@@ -118,89 +108,70 @@
     padding: 0;
     width: 30%;
   }
+  </style>
 
-  
+  <div id ="entire_page">
+  <div class="ui-widget">
+    <label for="venue_tags" style="position:relative;"><%= f.label :tags %></label><br />
+    <input id="tags" size="80" <%= f.text_field :tags %> 
 
-</style>
-
-<div id = "entire_page">
-
-
- <!--<div class="field" id="venue_name">
-   <%= f.label :venue_name %><br />
-    <%= f.text_field :venue_name %>
-  </div> -->
-
-<div class="ui-widget">
-  
-  <label for="venue_tags" style="position:relative;"><%= f.label :tags %></label><br />
- 
- <input id="tags" size="80" <%= f.text_field :tags %> 
-
-</div>
+  </div>
 
   <!--Tags used so far: !--> 
-
   <div class="actions">
     <%= f.submit %> 
   </div>
-
 </div>
 
- <script type="text/javascript">
+<script type="text/javascript">
+$(function() {
+  var availableTags = [
+  "organic",
+  "lunch",
+  "brunch",
+  "cocktail",
+  "dessert",
+  "bar",
+  "dinner",
+  "wine",
+  "local",
+  "american", 
+  "nordic",
+  "happy-hour",
+  "cocktails",
+  "beer",
+  "indian",
+  "indoor", 
+  "lounge",
+  "cheese", 
+  "private", 
+  "tasting", 
+  "italian",
+  "french",
+  "breakfast",
+  "desserts",
+  "steakhouse", 
+  "sushi",
+  "drinks",
+  "mediterranean",
+  "korean"
+  ];
 
+  function split( val ) {
+    return val.split( /,\s*/ );
+  }
+  function extractLast( term ) {
+    return split( term ).pop();
+  }
 
-
-
-      $(function() {
-      var availableTags = [
-      "organic",
-      "lunch",
-      "brunch",
-      "cocktail",
-      "dessert",
-      "bar",
-      "dinner",
-      "wine",
-      "local",
-      "american", 
-      "nordic",
-      "happy-hour",
-      "cocktails",
-      "beer",
-      "indian",
-      "indoor", 
-      "lounge",
-      "cheese", 
-      "private", 
-      "tasting", 
-      "italian",
-      "french",
-      "breakfast",
-      "desserts",
-      "steakhouse", 
-      "sushi",
-      "drinks",
-      "mediterranean",
-      "korean"
-
-    ];
-
-     function split( val ) {
-      return val.split( /,\s*/ );
-    }
-    function extractLast( term ) {
-      return split( term ).pop();
-    }
- 
-    $( "#tags" )
+  $( "#tags" )
       // don't navigate away from the field on tab when selecting an item
       .bind( "keydown", function( event ) {
         if ( event.keyCode === $.ui.keyCode.TAB &&
-            $( this ).data( "ui-autocomplete" ).menu.active ) {
+          $( this ).data( "ui-autocomplete" ).menu.active ) {
           event.preventDefault();
-        }
-      })
+      }
+    })
       .autocomplete({
         minLength: 0,
         source: function( request, response ) {
@@ -224,11 +195,9 @@
           return false;
         }
       });
-  });
+    });
 
-
- </script>
-
+</script>
   <!-- <div class="field">
     <%= f.label :latitude %><br />
     <%= f.text_field :latitude %>
@@ -241,9 +210,4 @@
     <%= f.label :nytID %><br />
     <%= f.text_field :nytID %>
   </div> -->
-
-
-
-<% end %>
-
-
+  <% end %>
