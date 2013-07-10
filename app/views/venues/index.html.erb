@@ -1,106 +1,45 @@
-
-<h1 align="center"> Project Taco</h1> &nbsp     &nbsp &nbsp
-
-
-<style type="text/css">
-
-.meat
-{
-    background-color: #E5E4E2;
-    border-collapse: collapse;
-}
-
-td {
-   padding: 5px;
-
-}
-
-a 
-{ 
-    color:#E33192; 
-}
-
-tr, ul, p{
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-   font-weight: 300;
-   text-align: center;
-   
-}
-div {display: block; text-align: center;}
-
-ul {display: inline-block; text-align: left;}
-
-
-
-Read more: http://www.ehow.com/how_8144802_align-bullet-list-html.html#ixzz2Y6AZ8Qcg
-</style>
-
-
+<div class="container">
+<h1 align="center">Project Taco</h1>
 
 <!-- <img src="assets/scoop.png" style="position: relative; left: 16% ; width:11%;"> -->
-
 <!-- <img src="assets/splash.png" style="position: relative;left: 31%; width:11%;"> -->
-
 <!-- <img src="/assets/mockup.png" style="position: relative; left: 46%; width:11%;"> -->
-
-
-
-
-&nbsp; &nbsp; &nbsp;
-    <div>
-        <ul>
-        <li>Seperate words with a comma when describing a Venue 
-        </li>
-        <li> Use dashes between words: i.e., happy-hour
-        </li>
-        <li>Every update goes directly into our database
-        </li>
-        </ul>
-    </div>
-
-
-       
+<div>
+  <ul>
+    <li>Seperate words with a comma when describing a venue </li>
+    <li>Use dashes between words: happy-hour, family-friendly, etc.</li>
+    <li>Every update goes directly into our database</li>
+  </ul>
+</div>
 
 <p> EXAMPLE: outdoors,lunch,dinner,balcony,terrace,bar</p>
 
-
-&nbsp
-&nbsp
-&nbsp
-&nbsp
-
-<table border = "1" class = "meat" >
-  <tr>
-    <th>Venue name</th>
-    <th>Website</th>
-    <th>Tags</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Nytid</th>
-    
-    
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table border="1" class="table table-striped table-bordered table-condensed" >
+<tr>
+<th>Venue name</th>
+<th>Website</th>
+<th>Tags</th>
+<th>Latitude</th>
+<th>Longitude</th>
+<th>NYTid</th>
+<th></th>
+</tr>
 
 <% @venues.each do |venue| %>
-  <tr>
-    <td><%= venue.venue_name %></td>
-    <td><a href= "http://<%= venue.website %>"><%= venue.website %></a></td>
-    <td><%= venue.tags %></td>
-    <td><%= venue.latitude %></td>
-    <td><%= venue.longitude %></td>
-    <td><%= venue.nytID %></td>
+<tr>
+<td><%= venue.venue_name %></td>
+<td><a href= "http://<%= venue.website %>"><%= venue.website %></a></td>
+<td><%= venue.tags %></td>
+<td><%= venue.latitude %></td>
+<td><%= venue.longitude %></td>
+<td><%= venue.nytID %></td>
 
-   <!-- <td><%= link_to 'Show', venue %></td> -->
-    <td style="color: #FF00FF"><%= link_to 'Edit', edit_venue_path(venue) %></td>
-    <!-- <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-  </tr>
+<!-- <td><%= link_to 'Show', venue %></td> -->
+<td style="color: #FF00FF"><%= link_to 'Edit', edit_venue_path(venue), class: "btn btn-mini" %></td>
+<!-- <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+</tr>
 <% end %>
 </table>
-
-<br />
+</div>
 
 <!-- <%= link_to 'New Venue', new_venue_path %> -->
-
