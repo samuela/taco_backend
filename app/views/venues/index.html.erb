@@ -14,7 +14,7 @@
 
 <p> EXAMPLE: outdoors,lunch,dinner,balcony,terrace,bar</p>
 
-<table border="1" class="table table-striped table-bordered table-condensed" >
+<table class="table table-striped table-bordered table-condensed" >
 <tr>
 <th>Venue name</th>
 <th>Website</th>
@@ -35,7 +35,7 @@
 <td><%= venue.nytID %></td>
 
 <!-- <td><%= link_to 'Show', venue %></td> -->
-<td style="color: #FF00FF"><%= link_to 'Edit', edit_venue_path(venue), class: "btn btn-mini" %></td>
+<td style="color: #FF00FF"><%= link_to 'Edit', edit_venue_path(venue), class: "btn btn-mini btn-success" %></td>
 <!-- <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
 </tr>
 <% end %>
